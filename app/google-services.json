@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "755821886598",
+    "project_id": "learnsort-ac781",
+    "storage_bucket": "learnsort-ac781.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755821886598:android:4aedac1ca474912424a507",
+        "android_client_info": {
+          "package_name": "com.example.learnsort"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQB8N-ZRi2pP5Q-8_xoZh3giQEeR2IGGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
