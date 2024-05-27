@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".HomepageActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
             android:layout_below="@id/textView_main_head"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:text="Login" />
+            android:text="Learn" />
 
 
         <Button
@@ -66,6 +66,28 @@
             android:layout_below="@id/button_learn"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:text="Register" />
+            android:text="Quizz" />
+
+
+
+        <Button
+            android:id="@+id/button_signout"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_quizz"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="Sign out" />
+
+        <ImageView
+            android:id="@+id/imageViewHelp"
+            android:layout_width="207dp"
+            android:layout_height="42dp"
+            android:layout_below="@id/button_signout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/question"
+            android:clickable="true"
+            android:focusable="true"/>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

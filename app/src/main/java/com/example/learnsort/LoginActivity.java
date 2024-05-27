@@ -1,5 +1,6 @@
 package com.example.learnsort;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -47,7 +48,10 @@ public class LoginActivity extends AppCompatActivity {
 
         authProfile = FirebaseAuth.getInstance();
 
-        Button buttonLogin = findViewById(R.id.button_login);
+
+
+
+        Button buttonLogin = findViewById(R.id.button_learn);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +84,9 @@ public class LoginActivity extends AppCompatActivity {
              public void onComplete(@NonNull Task<AuthResult> task) {
                  if (task.isSuccessful())
                  {
-                     Toast.makeText(LoginActivity.this,"You are now logged in!",Toast.LENGTH_LONG).show();
+                     Toast.makeText(LoginActivity.this,"You are now logged in!",Toast.LENGTH_SHORT).show();
+                     startActivity(new Intent(LoginActivity.this, HomepageActivity.class));
+                     finish();
                  }
                  else
                  {
@@ -99,11 +105,24 @@ public class LoginActivity extends AppCompatActivity {
                      catch (Exception e)
                      {
                          Log.e(TAG,e.getMessage());
-                         Toast.makeText(LoginActivity.this, e.getMessage(),Toast.LENGTH_LONG).show();
+                         Toast.makeText(LoginActivity.this, e.getMessage(),Toast.LENGTH_SHORT).show();
                      }
                  }
                  progressBar.setVisibility(View.GONE);
              }
          });
     }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        if (authProfile.getCurrentUser() != null)
+        {
+            Toast.makeText(LoginActivity.this,"You are now logged in!",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(LoginActivity.this, HomepageActivity.class));
+            finish();
+        }
+    }
+
 }

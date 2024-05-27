@@ -11,8 +11,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.Objects;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Button buttonLogin = findViewById(R.id.button_login);
+        Button buttonLogin = findViewById(R.id.button_learn);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonRegister = findViewById(R.id.button_register);
+        Button buttonRegister = findViewById(R.id.button_quizz);
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
