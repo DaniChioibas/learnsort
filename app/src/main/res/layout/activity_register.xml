@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:textColor="@color/white"
-                    android:text="Sign-up"
+                    android:text="Inregistrare"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
@@ -42,7 +42,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_below="@id/textView_register_head"
-                    android:text="Please register yourself to continue with the amazing experience!"
+                    android:text="Creati un cont pentru a incepe"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
             </RelativeLayout>
@@ -80,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewName"
                         android:padding="6dp"
-                        android:text="Full Name*" />
+                        android:text="Nume*" />
 
                     <View
                         android:id="@+id/divider_name"
@@ -99,7 +99,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_toEndOf="@id/imageViewName"
                         android:background="@android:color/transparent"
-                        android:hint="enter your full name"
+                        android:hint="introduceti numele..."
                         android:inputType="textPersonName"
                         android:padding="6dp"
                         android:textSize="16sp" />
@@ -147,7 +147,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_toEndOf="@id/imageViewEmail"
                         android:background="@android:color/transparent"
-                        android:hint="enter your email address"
+                        android:hint="introduceti adresa de email..."
                         android:inputType="textEmailAddress"
                         android:padding="6dp"
                         android:textSize="16sp" />
@@ -176,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewDoB"
                         android:padding="6dp"
-                        android:text="Date of Birth (dd/mm/yyyy)*" />
+                        android:text="Data nastere (zz/ll/aaaa)*" />
 
                     <View
                         android:id="@+id/divider_dob"
@@ -195,7 +195,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_toEndOf="@id/imageViewDoB"
                         android:background="@android:color/transparent"
-                        android:hint="select your date"
+                        android:hint="introdu data nasterii..."
                         android:inputType="date"
                         android:padding="6dp"
                         android:textSize="16sp" />
@@ -226,7 +226,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewGender"
                         android:padding="6dp"
-                        android:text="Gender*" />
+                        android:text="Sex*" />
 
                     <View
                         android:id="@+id/divider_gender"
@@ -249,7 +249,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/purple"
-                            android:text="Female"
+                            android:text="Feminin"
                             android:textColor="#555555"
                             android:textSize="16sp" />
 
@@ -259,7 +259,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:buttonTint="@color/purple"
-                            android:text="Male"
+                            android:text="Masculin"
                             android:textColor="#555555"
                             android:textSize="16sp" />
 
@@ -289,7 +289,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewMobile"
                         android:padding="6dp"
-                        android:text="Mobile*" />
+                        android:text="Telefon*" />
 
                     <View
                         android:id="@+id/divider_mobile"
@@ -308,7 +308,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_toEndOf="@id/imageViewMobile"
                         android:background="@android:color/transparent"
-                        android:hint="enter your mobile number"
+                        android:hint="introduceti numarul de telefon..."
                         android:inputType="phone"
                         android:padding="6dp"
                         android:textSize="16sp" />
@@ -337,7 +337,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewPwd"
                         android:padding="6dp"
-                        android:text="Password*" />
+                        android:text="Parola*" />
 
                     <View
                         android:id="@+id/divider_pwd"
@@ -356,7 +356,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_toEndOf="@id/imageViewPwd"
                         android:background="@android:color/transparent"
-                        android:hint="enter your password"
+                        android:hint="introduceti parola..."
                         android:inputType="textPassword"
                         android:padding="6dp"
                         android:textSize="16sp" />

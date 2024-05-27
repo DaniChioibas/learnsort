@@ -76,37 +76,42 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(textFullName))
                 {
-                    editTextRegisterFullName.setError("Full Name is required");
+                    editTextRegisterFullName.setError("Numele este obligatoriu!");
                     editTextRegisterFullName.requestFocus();
                 }
                 else if (TextUtils.isEmpty(textEmail))
                 {
-                    editTextRegisterFullName.setError("Email is required");
+                    editTextRegisterFullName.setError("Email-ul este obligatoriu!");
                     editTextRegisterFullName.requestFocus();
                 }
                 else if (!Patterns.EMAIL_ADDRESS.matcher(textEmail).matches())
                 {
-                    editTextRegisterFullName.setError("Valid email is required");
+                    editTextRegisterFullName.setError("Email-ul trebuie sa fie valid!");
                     editTextRegisterFullName.requestFocus();
                 }
                 else if (TextUtils.isEmpty(textDoB))
                 {
-                    editTextRegisterFullName.setError("Date is required");
+                    editTextRegisterFullName.setError("Data este obligatorie!");
                     editTextRegisterFullName.requestFocus();
                 }
                 else if (radioGroupRegisterGender.getCheckedRadioButtonId()==-1)
                 {
-                    editTextRegisterFullName.setError("Gender is required");
+                    editTextRegisterFullName.setError("Sexul este obligatoriu!");
                     editTextRegisterFullName.requestFocus();
                 }
                 else if (TextUtils.isEmpty(textMobile))
                 {
-                    editTextRegisterFullName.setError("Mobile is required");
+                    editTextRegisterFullName.setError("Telefonul este obligatoriu!");
                     editTextRegisterFullName.requestFocus();
                 }
                 else if (TextUtils.isEmpty(textPwd))
                 {
-                    editTextRegisterFullName.setError("Password is required");
+                    editTextRegisterFullName.setError("Parola este obligatorie!");
+                    editTextRegisterFullName.requestFocus();
+                }
+                else if (!isPasswordValid(textPwd))
+                {
+                    editTextRegisterFullName.setError("Parola nu este destul de complexa!");
                     editTextRegisterFullName.requestFocus();
                 }
                 else
@@ -143,10 +148,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                             if (task.isSuccessful())
                             {
+                                // Daca vrem confirmare prin e-mail.
+                                //firebaseUser.sendEmailVerification();
 
-                            firebaseUser.sendEmailVerification();
-
-                            Toast.makeText(RegisterActivity.this, "User registered successfully!",Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this, "Cont creat cu succes!",Toast.LENGTH_LONG).show();
 
                             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                             startActivity(intent);
@@ -154,7 +159,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
                             else
                             {
-                                Toast.makeText(RegisterActivity.this, "User registered failed!",Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegisterActivity.this, "Eroare la crearea contului",Toast.LENGTH_LONG).show();
 
                             }
                             progressBar.setVisibility(View.GONE);
@@ -168,11 +173,11 @@ public class RegisterActivity extends AppCompatActivity {
                     try {
                         throw task.getException();
                     } catch(FirebaseAuthInvalidCredentialsException e){
-                        editTextRegisterPwd.setError("Your email is invalid or already in use!");
+                        editTextRegisterPwd.setError("Adresa de email invalida sau deja folosita!");
                         editTextRegisterPwd.requestFocus();
                         progressBar.setVisibility(View.GONE);
                     } catch(FirebaseAuthUserCollisionException e){
-                        editTextRegisterPwd.setError("User is already registered with this email!");
+                        editTextRegisterPwd.setError("Exista deja un cont cu aceasta adresa de email!");
                         editTextRegisterPwd.requestFocus();
                         progressBar.setVisibility(View.GONE);
                     } catch (Exception e) {
@@ -182,5 +187,19 @@ public class RegisterActivity extends AppCompatActivity {
                     }
             }
         });
+
+
+    }
+    public boolean isPasswordValid(String password) {
+        if (password == null || password.length() < 10) {
+            return false;
+        }
+
+        boolean hasUppercase = !password.equals(password.toLowerCase());
+        boolean hasLowercase = !password.equals(password.toUpperCase());
+        boolean hasDigit = password.matches(".*\\d.*");
+        boolean hasSpecialChar = password.matches(".*[!@#$%^&*+=?-].*");
+
+        return hasUppercase && hasLowercase && hasDigit && hasSpecialChar;
     }
 }

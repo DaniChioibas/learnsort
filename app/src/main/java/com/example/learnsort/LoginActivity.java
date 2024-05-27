@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
              public void onComplete(@NonNull Task<AuthResult> task) {
                  if (task.isSuccessful())
                  {
-                     Toast.makeText(LoginActivity.this,"You are now logged in!",Toast.LENGTH_SHORT).show();
+                     Toast.makeText(LoginActivity.this,"Logare cu succes!",Toast.LENGTH_SHORT).show();
                      startActivity(new Intent(LoginActivity.this, HomepageActivity.class));
                      finish();
                  }
@@ -94,12 +94,12 @@ public class LoginActivity extends AppCompatActivity {
                          throw task.getException();
                      }catch (FirebaseAuthInvalidUserException e)
                      {
-                         editTextLoginEmail.setError("User does not exist");
+                         editTextLoginEmail.setError("Utilizatorul nu exista!");
                          editTextLoginEmail.requestFocus();
                      }
                      catch (FirebaseAuthInvalidCredentialsException e)
                      {
-                         editTextLoginEmail.setError("Invalid credentials");
+                         editTextLoginEmail.setError("Date invalide!");
                          editTextLoginEmail.requestFocus();
                      }
                      catch (Exception e)
@@ -119,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         if (authProfile.getCurrentUser() != null)
         {
-            Toast.makeText(LoginActivity.this,"You are now logged in!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this,"Logare cu succes!",Toast.LENGTH_SHORT).show();
             startActivity(new Intent(LoginActivity.this, HomepageActivity.class));
             finish();
         }

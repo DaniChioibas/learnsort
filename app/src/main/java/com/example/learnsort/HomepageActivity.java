@@ -64,7 +64,7 @@ public class HomepageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(HomepageActivity.this, MainActivity.class));
-                Toast.makeText(HomepageActivity.this, "You are now logged out", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomepageActivity.this, "Te-ai delogat", Toast.LENGTH_SHORT).show();
                 finish();
 
             }
