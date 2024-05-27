@@ -46,7 +46,7 @@ public class HomepageActivity extends AppCompatActivity {
         buttonQuizz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomepageActivity.this, QuizzActivity.class));
+               startActivity(new Intent(HomepageActivity.this, QuizActivity.class));
 
             }
         });

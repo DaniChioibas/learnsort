@@ -13,14 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class LearnActivity extends AppCompatActivity {
+public class QuizActivity extends AppCompatActivity {
+
     ArrayList<QuizModel> quizModels=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_learn);
+        setContentView(R.layout.activity_quiz);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -33,6 +34,7 @@ public class LearnActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
     }
+
 
     private void setUp(){
         quizModels.add(new QuizModel("1","Bubble Sort","About bubble sort","10", Collections.emptyList()));
