@@ -381,7 +381,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="50dp"
                     android:layout_marginBottom="50dp"
-                    android:text="Register" />
+                    android:text="Inregistrare" />
 
                 <ProgressBar
                     android:id="@+id/progressBar"

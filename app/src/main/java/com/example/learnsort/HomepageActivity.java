@@ -3,6 +3,8 @@ package com.example.learnsort;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class HomepageActivity extends AppCompatActivity {
 
     Button buttonLearn,buttonQuizz,buttonSignout;
-    ImageView imageViewHelp;
+    ImageView imageViewHelp,imageViewLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,10 @@ public class HomepageActivity extends AppCompatActivity {
         buttonQuizz = findViewById(R.id.button_quizz);
         buttonSignout = findViewById(R.id.button_signout);
         imageViewHelp = findViewById(R.id.imageViewHelp);
+        imageViewLogo = findViewById(R.id.imageView_logo);
+
+        Animation bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        imageViewLogo.startAnimation(bounceAnimation);
 
         buttonLearn.setOnClickListener(new View.OnClickListener() {
             @Override

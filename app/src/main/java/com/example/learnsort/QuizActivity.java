@@ -1,6 +1,9 @@
 package com.example.learnsort;
 
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +18,7 @@ import java.util.Collections;
 
 public class QuizActivity extends AppCompatActivity {
 
+    ImageView imageViewLogo;
     ArrayList<QuizModel> quizModels=new ArrayList<>();
 
     @Override
@@ -28,6 +32,11 @@ public class QuizActivity extends AppCompatActivity {
             return insets;
         });
 
+        imageViewLogo=findViewById(R.id.imageView_logo);
+        Animation bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        imageViewLogo.startAnimation(bounceAnimation);
+
+
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         setUp();
         QuizModel_RecyclerViewAdapter adapter = new QuizModel_RecyclerViewAdapter(this,quizModels);
@@ -37,10 +46,10 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void setUp(){
-        quizModels.add(new QuizModel("1","Bubble Sort","About bubble sort","10", Collections.emptyList()));
-        quizModels.add(new QuizModel("2","Insertion Sort","About insertion sort","10", Collections.emptyList()));
-        quizModels.add(new QuizModel("3","Selection Sort","About selection sort","10", Collections.emptyList()));
-        quizModels.add(new QuizModel("4","Merge Sort","About merge sort","10", Collections.emptyList()));
+        quizModels.add(new QuizModel("1","Bubble Sort","About bubble sort","4:00", Collections.emptyList()));
+        quizModels.add(new QuizModel("2","Insertion Sort","About insertion sort","10:00", Collections.emptyList()));
+        quizModels.add(new QuizModel("3","Selection Sort","About selection sort","5:00", Collections.emptyList()));
+        quizModels.add(new QuizModel("4","Merge Sort","About merge sort","11:00", Collections.emptyList()));
 
     }
 }

@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class QuizModel_RecyclerViewAdapter extends RecyclerView.Adapter<QuizModel_RecyclerViewAdapter.MyViewHolder> {
+public class LearnModel_RecyclerViewAdapter extends RecyclerView.Adapter<LearnModel_RecyclerViewAdapter.MyViewHolder> {
     Context context;
     ArrayList<QuizModel> quizModels;
 
-    public QuizModel_RecyclerViewAdapter(Context context, ArrayList<QuizModel> quizModels)
+    public LearnModel_RecyclerViewAdapter(Context context, ArrayList<QuizModel> quizModels)
     {
         this.context=context;
         this.quizModels=quizModels;
@@ -24,25 +24,24 @@ public class QuizModel_RecyclerViewAdapter extends RecyclerView.Adapter<QuizMode
 
     @NonNull
     @Override
-    public QuizModel_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LearnModel_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view=inflater.inflate(R.layout.recycler_view_row,parent,false);
-        return new QuizModel_RecyclerViewAdapter.MyViewHolder(view);
+        View view=inflater.inflate(R.layout.recycler_view_row2,parent,false);
+        return new LearnModel_RecyclerViewAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull QuizModel_RecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LearnModel_RecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.textViewName.setText(quizModels.get(position).getTitle());
         holder.textViewDesc.setText(quizModels.get(position).getSubtitle());
-        holder.textViewTime.setText(quizModels.get(position).getTime());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 QuizModel clickedQuiz = quizModels.get(holder.getAdapterPosition());
                 Context context= holder.itemView.getContext();
-                Intent intent = new Intent(context,QuestionsActivity.class);
-                intent.putExtra("quiz", clickedQuiz.getTitle());
+
+                Intent intent = new Intent(context,LessonActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -61,7 +60,6 @@ public class QuizModel_RecyclerViewAdapter extends RecyclerView.Adapter<QuizMode
 
             textViewName = itemView.findViewById(R.id.textViewName);
             textViewDesc = itemView.findViewById(R.id.textViewDesc);
-            textViewTime = itemView.findViewById(R.id.textViewTime);
 
         }
     }
