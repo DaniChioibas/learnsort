@@ -42,6 +42,7 @@ public class LearnModel_RecyclerViewAdapter extends RecyclerView.Adapter<LearnMo
                 Context context= holder.itemView.getContext();
 
                 Intent intent = new Intent(context,LessonActivity.class);
+                intent.putExtra("lessonID", clickedQuiz.getId());
                 context.startActivity(intent);
             }
         });
