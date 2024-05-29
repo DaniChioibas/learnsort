@@ -6,7 +6,7 @@ import java.util.List;
 public class QuestionModel {
     private String question;
     private List<String> options;
-    private String correct;
+    private String correctAnswer;
 
     public QuestionModel() {
         this("", Collections.emptyList(), "");
@@ -15,7 +15,7 @@ public class QuestionModel {
     public QuestionModel(String question, List<String> options, String correct) {
         this.question = question;
         this.options = options;
-        this.correct = correct;
+        this.correctAnswer = correct;
     }
 
     // Getters and setters
@@ -35,11 +35,11 @@ public class QuestionModel {
         this.options = options;
     }
 
-    public String getCorrect() {
-        return correct;
+    public String getCorrectAnswer() {
+        return correctAnswer;
     }
 
     public void setCorrect(String correct) {
-        this.correct = correct;
+        this.correctAnswer = correct;
     }
 }

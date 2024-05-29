@@ -42,7 +42,7 @@ public class QuizModel_RecyclerViewAdapter extends RecyclerView.Adapter<QuizMode
                 QuizModel clickedQuiz = quizModels.get(holder.getAdapterPosition());
                 Context context= holder.itemView.getContext();
                 Intent intent = new Intent(context,QuestionsActivity.class);
-                intent.putExtra("quiz", clickedQuiz.getTitle());
+                intent.putExtra("quizID", clickedQuiz.getId());
                 context.startActivity(intent);
             }
         });

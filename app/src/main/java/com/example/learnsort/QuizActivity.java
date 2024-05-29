@@ -46,10 +46,11 @@ public class QuizActivity extends AppCompatActivity {
 
 
     private void setUp(){
-        quizModels.add(new QuizModel("1","Bubble Sort","About bubble sort","4:00", Collections.emptyList()));
-        quizModels.add(new QuizModel("2","Insertion Sort","About insertion sort","10:00", Collections.emptyList()));
-        quizModels.add(new QuizModel("3","Selection Sort","About selection sort","5:00", Collections.emptyList()));
-        quizModels.add(new QuizModel("4","Merge Sort","About merge sort","11:00", Collections.emptyList()));
-
+        quizModels.add(new QuizModel("1","Bubble Sort","Quiz despre bubble sort","5 min", Collections.emptyList()));
+        quizModels.add(new QuizModel("2","Insertion Sort","Quiz despre insertion sort","5 min", Collections.emptyList()));
+        quizModels.add(new QuizModel("3","Selection Sort","Quiz despre selection sort","5 min", Collections.emptyList()));
+        quizModels.add(new QuizModel("4","Merge Sort","Quiz despre merge sort","6 min", Collections.emptyList()));
+        quizModels.add(new QuizModel("5","Quick Sort","Quiz despre merge sort","6 min", Collections.emptyList()));
+        quizModels.add(new QuizModel("6","Quiz General","Quiz despre algoritmi de sortare","10 min", Collections.emptyList()));
     }
 }
