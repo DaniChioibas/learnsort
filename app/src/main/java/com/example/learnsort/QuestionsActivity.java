@@ -33,7 +33,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     Button ansA,ansB,ansC,ansD;
     String timerASD;
-    TextView question;
+    TextView question,questionIndicator;
     List<QuestionModel> questionsList;
     int currentQuestion = 0;
     int correct=0,wrong=0;
@@ -48,6 +48,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
 
         question=findViewById(R.id.question_textview);
+        questionIndicator=findViewById(R.id.question_indicator_textview);
         ansA=findViewById(R.id.ansA);
         ansB=findViewById(R.id.ansB);
         ansC=findViewById(R.id.ansC);
@@ -103,6 +104,13 @@ public class QuestionsActivity extends AppCompatActivity {
             ansB.setText(options.get(1));
             ansC.setText(options.get(2));
             ansD.setText(options.get(3));
+
+            String questionIndicatorText = "Intrebarea " + (currentQuestion + 1) + "/" + questionsList.size();
+            questionIndicator.setText(questionIndicatorText);
+
+            // Update question progress
+            progressIndicator.setProgress(currentQuestion + 1, true);
+
 
             ansA.setOnClickListener(new View.OnClickListener() {
                 @Override

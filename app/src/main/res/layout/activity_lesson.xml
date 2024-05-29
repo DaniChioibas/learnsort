@@ -36,15 +36,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Button 1 -->
-        <Button
-            android:id="@+id/animatieBtn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Animatie" />
 
-        <!-- Button 2 -->
+
         <Button
             android:id="@+id/informatiiBtn"
             android:layout_width="0dp"
@@ -52,7 +45,7 @@
             android:layout_weight="1"
             android:text="Informatii" />
 
-        <!-- Button 3 -->
+
         <Button
             android:id="@+id/codBtn"
             android:layout_width="0dp"

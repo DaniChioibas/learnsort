@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class HomepageActivity extends AppCompatActivity {
 
     Button buttonLearn,buttonQuizz,buttonSignout;
-    ImageView imageViewHelp,imageViewLogo;
+    ImageView imageViewLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,6 @@ public class HomepageActivity extends AppCompatActivity {
         buttonLearn = findViewById(R.id.button_learn);
         buttonQuizz = findViewById(R.id.button_quizz);
         buttonSignout = findViewById(R.id.button_signout);
-        imageViewHelp = findViewById(R.id.imageViewHelp);
         imageViewLogo = findViewById(R.id.imageView_logo);
 
         Animation bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce);
@@ -57,13 +56,6 @@ public class HomepageActivity extends AppCompatActivity {
             }
         });
 
-        imageViewHelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomepageActivity.this, HelpActivity.class));
-
-            }
-        });
 
         buttonSignout.setOnClickListener(new View.OnClickListener() {
             @Override

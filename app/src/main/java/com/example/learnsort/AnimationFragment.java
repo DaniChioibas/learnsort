@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 
 public class AnimationFragment extends Fragment {
 
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -18,4 +20,5 @@ public class AnimationFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_animation, container, false);
     }
+
 }
